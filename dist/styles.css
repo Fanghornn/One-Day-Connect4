@@ -1,0 +1,90 @@
+body{
+  width:100vw;
+  height:100vh;
+  margin:0;
+}
+
+#game{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height:100%;
+}
+
+#gameBoard{
+  display: flex;
+  height:300px;
+  width:400px;
+  background: #0d47a1;
+}
+
+#gameBoard .cell-column{
+  display:flex;
+  flex-direction:column;
+  width:calc(400px/7);
+  cursor:pointer;
+}
+
+#gameBoard .cell-block{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  height:calc(300px/6);
+}
+
+#gameBoard .cell{
+  background:#E3F2FD;
+  width:37px;
+  height:37px;
+  border-radius:50%;
+  border:3px solid #1565C0;
+}
+
+#gameBoard .cell.active.player1{
+  background:red;
+}
+
+#gameBoard .cell.active.player2{
+  background:yellow;
+}
+
+#gameBoard .column-pointer{
+  width:75px;
+  height:75px;
+  position:absolute;
+  transform:rotate(90deg);
+  margin: -95px 0 0 -15px;
+  opacity:0;
+  cursor:initial;
+  background-image:url('../static/hand.svg');
+}
+
+#gameBoard .column-pointer:hover{
+  opacity:0 !important;
+}
+
+#gameBoard .cell-column:hover .column-pointer{
+  opacity:1;
+}
+
+#boardBase{
+  display:flex;
+  justify-content:space-between;
+  height:50px;
+}
+
+.base-foot{
+  background:#0d47a1;
+  width:30px;
+}
+
+.triangle{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 35px 100px 35px;
+  border-color: transparent transparent #0d47a1 transparent;
+  border-radius:5px;
+  margin-left:-20px;
+}
